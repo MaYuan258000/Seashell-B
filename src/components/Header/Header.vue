@@ -11,8 +11,8 @@
                      <li>退出</li>
                  </ul>
              </div>
-         </div>
-         
+           
+ </div>
     </section>
 </template>
 
@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
     .header_top{
         width: 100%;
         background: gainsboro;
@@ -53,4 +54,5 @@ export default {
         display: flex;
         justify-content: space-around;
     }
+
 </style>
