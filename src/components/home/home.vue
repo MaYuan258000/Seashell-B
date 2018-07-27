@@ -11,10 +11,67 @@
                    </li>
                  </ul>
                </div> -->
-              <div class="div1">1</div> 
-              <div class="div2">2</div> 
-              <div class="div3">3</div> 
-              <div class="div4">4</div> 
+      <el-col :span="3">
+    <el-menu
+      default-active="2"
+      class="el-menu-vertical-demo"
+      @open="handleOpen"
+      @close="handleClose"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b">
+      <el-menu-item index="1">
+        <i class="el-icon-menu"></i>
+        <span slot="title">首页</span>
+      </el-menu-item>
+        <el-submenu index="2">
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>账户管理</span>
+        </template>
+        <el-submenu index="1-4">
+          <template slot="title">账户余额</template>
+          <el-menu-item index="1-4-1">交易记录</el-menu-item>
+        </el-submenu>
+      </el-submenu>
+      <el-submenu index="3">
+        <template slot="title">
+        <i class="el-icon-setting"></i>
+        <span slot="title">员工管理</span>
+        </template>
+        <el-submenu index="1-1">
+          <template slot="title">导入须知</template>
+           <el-menu-item index="1-1-1">导入失败</el-menu-item>
+        </el-submenu>
+        <el-submenu index="1-2">
+          <template slot="title">员工信息</template>
+           <el-menu-item index="1-1-2">编辑页面</el-menu-item>
+        </el-submenu>
+      </el-submenu>
+
+       <el-submenu index="4">
+        <template slot="title">
+        <i class="el-icon-setting"></i>
+        <span slot="title">工资管理</span>
+        </template>
+       <el-menu-item index="5">
+        <span slot="title">发放须知</span>
+      </el-menu-item>
+      <el-menu-item index="6">
+        <span slot="title">工资详情</span>
+      </el-menu-item>
+        <el-submenu index="2-1">
+          <template slot="title">工资审核</template>
+           <el-menu-item index="2-1-1">审核页面</el-menu-item>
+           <el-menu-item index="2-1-1">审核进度</el-menu-item>
+        </el-submenu>
+      <el-menu-item index="6">
+        <span slot="title">工资记录</span>
+      </el-menu-item>
+      </el-submenu>
+    </el-menu>
+  </el-col>
+    </el-row>
           </section>
   </section>
 </template>
@@ -36,7 +93,12 @@ export default {
     
   },
   methods:{
-
+       handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
   },
   components:{
     Head
@@ -46,75 +108,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@media screen and(max-width: 1024px){
-      .div1{
-     width: 20rem;
-     height: 20rem;
-     background: red;
-   }
-      .div2{
-     width: 20rem;
-     height: 20rem;
-     background: blue;
-   }
-      .div3{
-     width: 20rem;
-     height: 20rem;
-     background: yellow;
-   }
-      .div4{
-     width: 20rem;
-     height: 20rem;
-     background: navy;
-   }
+.el-submenu .el-menu-item{
+  min-width: 0px;
 }
-@media screen  and(max-width: 764px){
-    .div1{
-     width: 20rem;
-     height: 20rem;
-     background: red;
-   }
-      .div2{
-     width: 20rem;
-     height: 20rem;
-     background: blue;
-   }
-      .div3{
-     width: 20rem;
-     height: 20rem;
-     background: yellow;
-   }
-      .div4{
-     width: 20rem;
-     height: 20rem;
-     background: navy;
-   }
-}
- .mm{
-   display: flex;
-   justify-content: space-between;
-   .div1{
-     width: 20rem;
-     height: 20rem;
-     background: red;
-   }
-      .div2{
-     width: 20rem;
-     height: 20rem;
-     background: blue;
-   }
-      .div3{
-     width: 20rem;
-     height: 20rem;
-     background: yellow;
-   }
-      .div4{
-     width: 20rem;
-     height: 20rem;
-     background: navy;
-   }
-
- }
+ 
   .hello{
     width: 100%;
     height: 100%;
